@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bne8qdde4hrhd"]
+
+[ext_resource type="Texture2D" uid="uid://bbfqb45i0biwo" path="res://assets/sprites/campo-roxo.png" id="1_gt13d"]
+[ext_resource type="Texture2D" uid="uid://bqva8qnaeisem" path="res://assets/sprites/linha-meio.png" id="2_jbqtc"]
+[ext_resource type="PackedScene" uid="uid://bvqtsd7csn1p1" path="res://jogador/jogador.tscn" id="3_c54gq"]
+[ext_resource type="PackedScene" uid="uid://ccmbdmnuiy8g5" path="res://bola/bola.tscn" id="4_3h0wm"]
+
+[node name="main" type="Node2D"]
+
+[node name="campo" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_gt13d")
+
+[node name="linhaMeio" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.5, 5.6)
+texture = ExtResource("2_jbqtc")
+
+[node name="jogador1" parent="." instance=ExtResource("3_c54gq")]
+position = Vector2(80, 360)
+
+[node name="jogador2" parent="." instance=ExtResource("3_c54gq")]
+position = Vector2(1200, 360)
+jogador1 = false
+
+[node name="bola" parent="." instance=ExtResource("4_3h0wm")]
+position = Vector2(640, 360)
